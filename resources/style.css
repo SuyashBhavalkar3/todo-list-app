@@ -1,0 +1,326 @@
+/* ===== Reset & Base Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f6f7fb;
+  color: #333;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* ===== Header ===== */
+header {
+  background: linear-gradient(315deg, #4b6cb7 0%, #182848 74%);
+  color: white;
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ===== Task Cards ===== */
+.card1, .card {
+  background-color: white;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.card1 h2,
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #4b6cb7;
+}
+
+/* ===== Add Task Form ===== */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 2rem auto;
+  max-width: 600px;
+  flex-wrap: wrap;
+}
+
+form input[type="text"] {
+  flex: 1 1 300px;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+form button {
+  background-color: #4b6cb7;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+form button:hover {
+  background-color: #3a549f;
+}
+
+/* ===== Task Items ===== */
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #f1f5ff;
+  padding: 0.8rem 1rem;
+  margin: 0.5rem 0;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  transition: background 0.2s ease-in-out;
+}
+
+.task:hover {
+  background: #e0e8ff;
+}
+
+.task input[type="checkbox"] {
+  margin-right: 1rem;
+  transform: scale(1.2);
+}
+
+.task p {
+  flex: 1;
+  font-size: 1rem;
+}
+
+.task-label.striked {
+  text-decoration: line-through;
+  color: gray;
+}
+
+/* Priority Badge */
+.priority-badge {
+  font-size: 0.7rem;
+  padding: 2px 6px;
+  border-radius: 6px;
+  color: white;
+  margin-left: 10px;
+  text-transform: uppercase;
+}
+
+.low {
+  background-color: #5cb85c;
+}
+
+.medium {
+  background-color: #f0ad4e;
+}
+
+.high {
+  background-color: #d9534f;
+}
+
+/* Buttons */
+.task button {
+  margin-left: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.task button:first-of-type {
+  background-color: #ffc107;
+  color: white;
+}
+
+.task button:last-of-type {
+  background-color: blue;
+  color: white;
+}
+
+.task button:hover {
+  opacity: 0.9;
+}
+
+/* Delete Button */
+.delete-btn {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+.task button.delete-btn:hover {
+  background-color: red;
+}
+
+.task input[type="checkbox"]:checked ~ input[type="text"] {
+  text-decoration: line-through;
+  color: #888;
+  opacity: 0.6;
+}
+
+/* ===== Dropdown Edit/Delete ===== */
+.dots-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.dots-btn:hover {
+  color: green;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  min-width: 120px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.dropdown-content form {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content input[type="text"] {
+  padding: 5px;
+  margin-bottom: 5px;
+  font-size: 14px;
+}
+
+.dropdown-content button {
+  padding: 5px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.dropdown-content button:hover {
+  background-color: #45a049;
+}
+
+/* ===== Alert Box for Input Validation ===== */
+.alert {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+  padding: 10px 15px;
+  margin: 1rem auto;
+  max-width: 600px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+/* ===== Footer ===== */
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgb(26, 26, 143);
+  color: #aaa;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+/* ===== Responsive Handling ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.6rem;
+    padding: 0 1rem;
+  }
+
+  form input[type="text"],
+  form select,
+  form button {
+    width: 100%;
+  }
+
+  .task {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+
+  .task input[type="checkbox"] {
+    margin: 0 0 0.5rem 0;
+  }
+
+  .task p,
+  .task .task-input {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .task form {
+    width: 100%;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .task button {
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  .dropdown-content {
+    right: 0;
+    left: auto;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .priority-badge {
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}

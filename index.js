@@ -57,6 +57,7 @@ app.post("/update", function(req, res) {
   res.redirect("/");
 });
 
-app.listen(7700, function() {
-  console.log("Server is running on port 7700");
+const port = process.env.PORT || 7700;
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });

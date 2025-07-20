@@ -4,8 +4,9 @@
   "description": "To_Do_List_Project",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "start": "node app.js",
+  "dev": "nodemon app.js",
+  "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Suyash",
   "license": "ISC",

@@ -12,14 +12,17 @@
   </header>
 
   <main>
-    <!-- Form to Add New Todo -->
+    <!-- ✅ Form to Add New Todo (with required validation) -->
     <form action="/" method="POST" onsubmit="return validateForm()">
-      <input type="text" name="ele1" placeholder="Add a new task..." id="taskInput"/>
-      <select name="priority">
+      <input type="text" name="ele1" placeholder="Add a new task..." id="taskInput" required />
+      
+      <select name="priority" required>
+        <option value="" selected>Select Priority</option>
         <option value="High">High</option>
-        <option value="Medium" selected>Medium</option>
+        <option value="Medium">Medium</option>
         <option value="Low">Low</option>
       </select>
+
       <button type="submit">Add</button>
     </form>
 
@@ -41,12 +44,17 @@
           <form action="/update" method="POST" class="edit-form">
             <input type="checkbox" onchange="toggleStrike(this)">
             <input type="hidden" name="index" value="<%= index %>"/>
-            <input type="text" name="updatedItem" value="<%= item.text %>" class="task-input"/>
-            <select name="updatedPriority">
+            
+            <!-- ✅ Required on edit input -->
+            <input type="text" name="updatedItem" value="<%= item.text %>" class="task-input" required />
+
+            <!-- ✅ Required on edit priority -->
+            <select name="updatedPriority" required>
               <option value="High" <%= item.priority === "High" ? 'selected' : '' %>>High</option>
               <option value="Medium" <%= item.priority === "Medium" ? 'selected' : '' %>>Medium</option>
               <option value="Low" <%= item.priority === "Low" ? 'selected' : '' %>>Low</option>
             </select>
+
             <button type="submit" class="edit-btn">✔</button>
           </form>
 
